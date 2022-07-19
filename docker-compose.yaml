@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  crm-proxy-app:
+    build:
+      context: .
+    restart: unless-stopped
+    volumes:
+      - crm-api-app-static-data:/vol/static
+    ports:
+      - "8443:443"
+volumes:
+  crm-api-app-static-data:
+networks:
+  default:
+    name: crm_development
