@@ -8,8 +8,10 @@ services:
       - crm-api-app-static-data:/vol/static
     ports:
       - "8443:443"
-volumes:
-  crm-api-app-static-data:
 networks:
   default:
     name: crm_development
+volumes:
+  crm-api-app-static-data:
+    external: true
+    name: crm-api-app-static-data
